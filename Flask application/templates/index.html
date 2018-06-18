@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Nudity detector</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h3>Enter the image for nudity detection</h3>
+	<div class="jumbotron text-center" style="width : 40%;">
+		<form action="http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
+				<input type = "file" name = "image" style="padding-left: 330px;"><br>
+				<div class="text-center">
+		      		<button type="submit" class="btn btn-primary">Check</button>
+		      	</div>
+		</form>
+	</div>
+</body>
+</html>
