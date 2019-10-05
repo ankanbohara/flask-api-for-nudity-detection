@@ -9,7 +9,7 @@ from keras.preprocessing import image as immage
 from keras.utils import layer_utils
 from keras.utils.data_utils import get_file
 from keras.applications.imagenet_utils import preprocess_input
-from IPython.display import SVG
+#from IPython.display import SVG
 from keras.utils.vis_utils import model_to_dot
 from keras.utils import plot_model
 from keras.initializers import glorot_uniform
@@ -32,6 +32,7 @@ app = Flask(__name__)
 def index():
    return render_template('index.html')
 	
+#Function to upload files
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file():
    if request.method == 'POST':
@@ -39,6 +40,8 @@ def upload_file():
    	fname = secure_filename(f.filename)
    	f.save(fname)
    	return redirect(url_for('predictor',filename=fname))
+
+#Function to give predictions
 @app.route('/predict/<filename>')
 def predictor(filename):
 	K.clear_session() 
@@ -57,6 +60,7 @@ def predictor(filename):
 	a = loaded_model.predict(x)[0];
 	ans = a[1]*100.0
 	return "Model predicted the image to be of nudity : %.4f precentage"%ans
+
 if __name__ == '__main__':
    app.run(debug = True)
 
